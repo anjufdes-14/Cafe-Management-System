@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Cafe Management System</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>AURA DELIGHTS CAFE</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Place Your Order</h1>
+        <form id="order-form">
+            <label for="item">Select Item:</label>
+            <select id="item" name="item">
+                <option value="espresso">Espresso</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="mocha">Mocha</option>
+                <option value="americano">Americano</option>
+                <option value="croissant">Croissant</option>
+                <option value="chocolate brownie">Chocolate Brownie</option>
+                <option value="blueberry muffin">Blueberry Muffin</option>
+                <option value="grilled cheese sandwich">Grilled Cheese Sandwich</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <button type="button" id="add-to-cart">Add to Cart</button>
+        </form>
+
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price"><strong>Total Price: Rs. 0</strong></p>
+
+        <h3>Delivery Information</h3>
+        <form id="address-form" style="display:none;">
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

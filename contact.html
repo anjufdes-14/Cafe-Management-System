@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aura Delights Cafe</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>AURA DELIGHTS CAFE</h1>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>Have questions? Feel free to reach out to us using the form below.</p>
+
+        <!-- Contact Form -->
+        <div class="contact-container">
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- Success Message (Initially Hidden) -->
+            <p id="successMessage" style="color: green; font-weight: bold; display: none; margin-top: 10px;">
+                ✅ Message sent successfully!
+            </p>
+        </div>
+
+        <!-- Cafe Contact Details -->
+        <div class="cafe-details">
+            <h2>Visit Our Cafe</h2>
+            <p><strong>Address:</strong> 123 Coffee Street, City Center, Margoa Goa</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> info@auradelightscafe.com</p>
+
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <h2>Follow Us</h2>
+            <a href="https://facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>
