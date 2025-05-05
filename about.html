@@ -1,55 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Cafe Management System</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Aura Delights Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2c2c;
+    }
+
+    .overlay {
+      background-color: rgba(255, 250, 240, 0.93);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #c85000;
+      margin-bottom: 20px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #5a3e36;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: #ffe2c6;
+    }
+
+    .auth-buttons {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .auth-link {
+      color: white;
+      background-color: #5c688b;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .auth-link:hover {
+      background-color: #a17070;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      background: #fff5eb;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    main h2 {
+      margin-top: 30px;
+      color: #a85020;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #4d3d38;
+    }
+
+    .highlight-table {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .highlight-table td {
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+
+    .highlight-table td:first-child {
+      font-size: 18px;
+      color: #ff6a00;
+    }
+
+    @media (max-width: 600px) {
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="auth-buttons">
+        <a href="logout.php" class="auth-link">Logout</a>
+      </div>
+      
     <h1>AURA DELIGHTS CAFE</h1>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+
     <main>
-        <h1>About Us</h1>
-        <p>Welcome to our cafe! We are dedicated to serving the finest coffee and delicious snacks made from high-quality ingredients.</p>
-        <h2>Our Story</h2>
-        <p>Founded in 2020, our cafe was born out of a love for coffee and a passion for creating a warm and inviting space for our customers. Our expert baristas craft every cup with precision and care.</p>
-        <h2>Our Mission</h2>
-        <p>We believe in delivering an exceptional cafe experience through premium ingredients, outstanding customer service, and a relaxing atmosphere.</p>
-        <h2>What Sets Us Apart?</h2>
-        <section class="highlights">
-            <table class="highlight-table">
-                <tr>
-                    <td>✔️</td>
-                    <td>Locally sourced, organic coffee beans</td>
-                </tr>
-                <tr>
-                    <td>✔️</td>
-                    <td>A welcoming and comfortable space for work or relaxation</td>
-                </tr>
-                <tr>
-                    <td>✔️</td>
-                    <td>Customizable beverages tailored to your preferences</td>
-                </tr>
-                <tr>
-                    <td>✔️</td>
-                    <td>Community-focused events and coffee workshops</td>
-                </tr>
-            </table>
-        </section>
- 
+      <h1>About Us</h1>
+      <p>Welcome to our cafe! We are dedicated to serving the finest coffee and delicious snacks made from high-quality ingredients.</p>
+
+      <h2>Our Story</h2>
+      <p>Founded in 2020, our cafe was born out of a love for coffee and a passion for creating a warm and inviting space for our customers. Our expert baristas craft every cup with precision and care.</p>
+
+      <h2>Our Mission</h2>
+      <p>We believe in delivering an exceptional cafe experience through premium ingredients, outstanding customer service, and a relaxing atmosphere.</p>
+
+      <h2>What Sets Us Apart?</h2>
+      <table class="highlight-table">
+        <tr>
+          <td>✔️</td>
+          <td>Locally sourced, organic coffee beans</td>
+        </tr>
+        <tr>
+          <td>✔️</td>
+          <td>A welcoming and comfortable space for work or relaxation</td>
+        </tr>
+        <tr>
+          <td>✔️</td>
+          <td>Customizable beverages tailored to your preferences</td>
+        </tr>
+        <tr>
+          <td>✔️</td>
+          <td>Community-focused events and coffee workshops</td>
+        </tr>
+      </table>
     </main>
-   
+  </div>
 </body>
 </html>
