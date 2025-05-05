@@ -1,58 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order - Cafe Management System</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order - Aura Delights Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2c2c;
+    }
+
+    .overlay {
+      background-color: rgba(255, 250, 240, 0.95);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #c85000;
+      margin-bottom: 20px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #5a3e36;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: #ffe2c6;
+    }
+
+    .auth-buttons {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .auth-link {
+      color: white;
+      background-color: #5c688b;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .auth-link:hover {
+      background-color: #a17070;
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+      background: #fff5eb;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #5a3e36;
+    }
+
+    select, input[type="number"], textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    #add-to-cart,
+    button[type="submit"] {
+      background-color: #c85000;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #add-to-cart:hover,
+    button[type="submit"]:hover {
+      background-color: #a14200;
+    }
+
+    #cart-items {
+      background-color: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      list-style: none;
+      margin: 0;
+      border: 1px solid #ccc;
+    }
+
+    #cart-items li {
+      margin-bottom: 5px;
+    }
+
+    #total-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #5a3e36;
+    }
+
+    @media (max-width: 600px) {
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="auth-buttons">
+      <a href="logout.php" class="auth-link">Logout</a>
+    </div>
+
     <h1>AURA DELIGHTS CAFE</h1>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+
     <main>
-        <h1>Place Your Order</h1>
-        <form id="order-form">
-            <label for="item">Select Item:</label>
-            <select id="item" name="item">
-                <option value="espresso">Espresso</option>
-                <option value="cappuccino">Cappuccino</option>
-                <option value="mocha">Mocha</option>
-                <option value="americano">Americano</option>
-                <option value="croissant">Croissant</option>
-                <option value="chocolate brownie">Chocolate Brownie</option>
-                <option value="blueberry muffin">Blueberry Muffin</option>
-                <option value="grilled cheese sandwich">Grilled Cheese Sandwich</option>
-            </select>
+      <h1>Place Your Order</h1>
+      <form id="address-form" action="order.php" method="POST">
+        <label for="item">Select Item:</label>
+        <select id="item" name="item">
+          <option value="espresso">Espresso</option>
+          <option value="cappuccino">Cappuccino</option>
+          <option value="mocha">Mocha</option>
+          <option value="americano">Americano</option>
+          <option value="croissant">Croissant</option>
+          <option value="chocolate brownie">Chocolate Brownie</option>
+          <option value="blueberry muffin">Blueberry Muffin</option>
+          <option value="grilled cheese sandwich">Grilled Cheese Sandwich</option>
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required />
 
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+        <button type="button" id="add-to-cart">Add to Cart</button>
 
-            <button type="button" id="add-to-cart">Add to Cart</button>
-        </form>
-
-        <h2>Your Cart</h2>
+        <label for="cart">Your Cart:</label>
         <ul id="cart-items"></ul>
+
         <p id="total-price"><strong>Total Price: Rs. 0</strong></p>
 
-        <h3>Delivery Information</h3>
-        <form id="address-form" style="display:none;">
-            <label for="address">Delivery Address:</label>
-            <textarea id="address" name="address" required></textarea>
-            <button type="submit">Place Order</button>
-        </form>
-    </main>
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" required></textarea>
 
-    <script src="scripts/script.js"></script>
+        <button type="submit">Place Order</button>
+      </form>
+      <div id="order-summary" style="margin-top: 30px;"></div>
+
+    </main>
+  </div>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
