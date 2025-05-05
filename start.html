@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Management System - Start</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Open Sans', sans-serif;
+      color: #3d2c1e;
+    }
+
+    .overlay {
+      background-color: rgba(255, 248, 240, 0.85);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      color: #d2691e;
+      margin-bottom: 20px;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    .tagline {
+      font-size: 22px;
+      color: #5a3e36;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .auth-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .auth-link {
+      background-color: #ffb347; /* Brighter peach-orange */
+      padding: 12px 24px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-link:hover {
+      background-color: #f28c28; /* Deeper orange on hover */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>AURA DELIGHTS CAFE</h1>
+    <p class="tagline">Sip, Savor & Smile – Your café experience starts here ☕🍰</p>
+    <div class="auth-buttons">
+      <a href="signup.html" class="auth-link">Sign Up</a>
+      <a href="login.html" class="auth-link">Login</a>
+      <a href="logout.php" class="auth-link">Logout</a>
+    </div>
+  </div>
+</body>
+</html>
