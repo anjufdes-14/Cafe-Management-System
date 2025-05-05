@@ -1,36 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Cafe Management System</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services - Aura Delights Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2c2c;
+    }
+
+    .overlay {
+      background-color: rgba(255, 250, 240, 0.95);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #c85000;
+      margin-bottom: 20px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #5a3e36;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: #ffe2c6;
+    }
+
+    .auth-buttons {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .auth-link {
+      color: white;
+      background-color: #5c688b;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .auth-link:hover {
+      background-color: #a17070;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      background: #fff5eb;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    main h2 {
+      color: #5a3e36;
+      font-size: 28px;
+      margin-top: 25px;
+    }
+
+    main p {
+      font-size: 18px;
+      color: #5a3e36;
+    }
+
+    @media (max-width: 600px) {
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="auth-buttons">
+      <a href="logout.php" class="auth-link">Logout</a>
+    </div>
+
     <h1>AURA DELIGHTS CAFE</h1>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+
     <main>
-        <h1>Our Services</h1>
-        <p>We offer a variety of services to ensure an amazing experience at our cafe.</p>
-        <h2>Cafe & Dine-in</h2>
-        <p>Enjoy a relaxing ambiance with our carefully curated menu featuring gourmet coffee, fresh pastries, and delicious meals.</p>
-        <h2>Takeaway & Online Orders</h2>
-        <p>Order your favorite drinks and snacks online and pick them up at your convenience or get them delivered to your doorstep.</p>
-        <h2>Workspace & Free Wi-Fi</h2>
-        <p>Our cafe offers a comfortable workspace with free Wi-Fi, perfect for remote work or casual meetings.</p>
-        <h2>Coffee Workshops</h2>
-        <p>Join our expert-led coffee brewing workshops and learn the art of making the perfect cup of coffee.</p>
+      <h1>Our Services</h1>
+      <p>We offer a variety of services to ensure an amazing experience at our cafe.</p>
+
+      <h2>Cafe & Dine-in</h2>
+      <p>Enjoy a relaxing ambiance with our carefully curated menu featuring gourmet coffee, fresh pastries, and delicious meals.</p>
+
+      <h2>Takeaway & Online Orders</h2>
+      <p>Order your favorite drinks and snacks online and pick them up at your convenience or get them delivered to your doorstep.</p>
+
+      <h2>Workspace & Free Wi-Fi</h2>
+      <p>Our cafe offers a comfortable workspace with free Wi-Fi, perfect for remote work or casual meetings.</p>
+
+      <h2>Coffee Workshops</h2>
+      <p>Join our expert-led coffee brewing workshops and learn the art of making the perfect cup of coffee.</p>
     </main>
+  </div>
 </body>
 </html>
