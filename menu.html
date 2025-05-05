@@ -1,81 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Menu - Cafe Management System</title>
-    <link rel="stylesheet" href="styles/style.css"> <!-- External stylesheet link -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Menu - Aura Delights Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2c2c;
+    }
+
+    .overlay {
+      background-color: rgba(255, 250, 240, 0.92);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #c85000;
+      margin-bottom: 20px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #5a3e36;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: #ffe2c6;
+    }
+
+    .auth-buttons {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .auth-link {
+      color: white;
+      background-color: #5c688b;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .auth-link:hover {
+      background-color: #a17070;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      background: #fff5eb;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      border-radius: 8px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-item h2 {
+      margin-top: 15px;
+      font-size: 22px;
+      color: #5a3e36;
+    }
+
+    .menu-item p {
+      font-size: 15px;
+      color: #6d4c41;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
+      color: #c85000;
+    }
+
+    @media (max-width: 600px) {
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>AURA DELIGHTS CAFE</h1>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Our Cafe Menu</h1>
-        <div class="menu-items">
-            <div class="menu-item">
-                <img src="images/espresso.jpg" alt="Espresso" height="200px" width="230px">
-                <h2>Espresso</h2>
-                <p>A strong black coffee made by forcing steam through finely-ground coffee beans.</p>
-                <span class="price">Rs.150.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/cappuccino.jpg" alt="cappuccino" height="200px" width="230px">
-                <h2>Cappuccino</h2>
-                <p>A coffee drink made with espresso, steamed milk, and a layer of milk foam.</p>
-                <span class="price">Rs.200.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/mocha1.jpg" alt="mocha" height="200px" width="230px">
-                <h2>Mocha</h2>
-                <p>A chocolate-flavored variant of a latte, made with espresso, steamed milk, and chocolate syrup.</p>
-                <span class="price">Rs.180.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/americano.png" alt="americano" height="200px" width="230px">
-                <h2>Americano</h2>
-                <p>Espresso diluted with hot water, offering a smooth and rich coffee experience.</p>
-                <span class="price">Rs.140.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/croissant.jpg" alt="croissant" height="200px" width="230px">
-                <h2>Croissant</h2>
-                <p>Flaky and buttery pastry, perfect for pairing with coffee.</p>
-                <span class="price">Rs.100.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/browine.png" alt="browine" height="200px" width="230px">
-                <h2>Chocolate Brownie</h2>
-                <p>Rich and fudgy brownie topped with melted chocolate.</p>
-                <span class="price">Rs.120.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/muffin.jpg" alt="muffin" height="200px" width="230px">
-                <h2>Blueberry Muffin</h2>
-                <p>Soft and fluffy muffin bursting with fresh blueberries.</p>
-                <span class="price">Rs.130.00</span>
-            </div>
-            <div class="menu-item">
-                <img src="images/sandwich.jpg" alt="sandwich" height="200px" width="230px">
-                <h2>Grilled Cheese Sandwich</h2>
-                <p>Crispy toasted bread filled with gooey melted cheese.</p>
-                <span class="price">Rs.180.00</span>
-            </div>
-        </div>
-    </main>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts/script.js"></script>
+  <div class="overlay">
+    <div class="auth-buttons">
+      <a href="logout.php" class="auth-link">Logout</a>
+    </div>
 
+    <h1>AURA DELIGHTS CAFE</h1>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Our Cafe Menu</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="images/espresso.jpg" alt="Espresso">
+          <h2>Espresso</h2>
+          <p>A strong black coffee made by forcing steam through finely-ground coffee beans.</p>
+          <span class="price">Rs.150.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/cappuccino.jpg" alt="Cappuccino">
+          <h2>Cappuccino</h2>
+          <p>A coffee drink made with espresso, steamed milk, and a layer of milk foam.</p>
+          <span class="price">Rs.200.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/mocha1.jpg" alt="Mocha">
+          <h2>Mocha</h2>
+          <p>Chocolate-flavored espresso with steamed milk and chocolate syrup.</p>
+          <span class="price">Rs.180.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/americano.png" alt="Americano">
+          <h2>Americano</h2>
+          <p>Espresso diluted with hot water for a rich coffee experience.</p>
+          <span class="price">Rs.140.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/croissant.jpg" alt="Croissant">
+          <h2>Croissant</h2>
+          <p>Flaky and buttery pastry, perfect with your morning brew.</p>
+          <span class="price">Rs.100.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/browine.png" alt="Chocolate Brownie">
+          <h2>Chocolate Brownie</h2>
+          <p>Rich, fudgy brownie topped with melted chocolate.</p>
+          <span class="price">Rs.120.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/muffin.jpg" alt="Blueberry Muffin">
+          <h2>Blueberry Muffin</h2>
+          <p>Soft and fluffy muffin bursting with blueberries.</p>
+          <span class="price">Rs.130.00</span>
+        </div>
+        <div class="menu-item">
+          <img src="images/sandwich.jpg" alt="Grilled Cheese Sandwich">
+          <h2>Grilled Cheese Sandwich</h2>
+          <p>Crispy toasted bread filled with gooey melted cheese.</p>
+          <span class="price">Rs.180.00</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
