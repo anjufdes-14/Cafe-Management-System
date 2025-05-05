@@ -17,17 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemSelect = document.getElementById("item");
     const quantityInput = document.getElementById("quantity");
     const addressInput = document.getElementById("address");
+    const orderSummary = document.getElementById("order-summary"); // optional div for showing response
 
     let cart = [];
 
     function updateCart() {
-        cartItemsList.innerHTML = "";  // Clear previous cart items
+        cartItemsList.innerHTML = "";
         let totalPrice = 0;
 
         if (cart.length === 0) {
             cartItemsList.innerHTML = "<li>Your cart is empty</li>";
             totalPriceDisplay.innerHTML = "<strong>Total Price: Rs. 0</strong>";
-            addressForm.style.display = "none"; // Hide address form if cart is empty
             return;
         }
 
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
             li.textContent = `${item.quantity} x ${item.name} - Rs. ${item.totalPrice}`;
 
-            // Add remove button
             const removeButton = document.createElement("button");
             removeButton.textContent = "Remove";
             removeButton.style.marginLeft = "10px";
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         totalPriceDisplay.innerHTML = `<strong>Total Price: Rs. ${totalPrice}</strong>`;
-        addressForm.style.display = "block"; // Show address form when items are in cart
     }
 
     function removeItem(index) {
@@ -91,29 +89,60 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        alert('Your order has been placed!');
+        const formData = new FormData();
+        cart.forEach(item => {
+            formData.append("items[]", item.name);
+            formData.append("quantities[]", item.quantity);
+        });
+        formData.append("address", addressInput.value);
 
-        // Clear everything
-        cart = [];
-        addressInput.value = "";
-        updateCart();
+        fetch("order.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (orderSummary) {
+                orderSummary.innerHTML = data;
+            } else {
+                alert("Order placed successfully!");
+                console.log(data);
+            }
+
+            cart = [];
+            updateCart();
+            addressInput.value = "";
+        })
+        .catch(error => {
+            alert("An error occurred.");
+            console.error(error);
+        });
     });
 
-    // Initialize cart view
     updateCart();
 });
 
-//jQuery to show success message on form submission
+// jQuery section for contact form and UI enhancements
 $(document).ready(function () {
+    // Contact form submission (if present)
     $("#contactForm").submit(function (event) {
         event.preventDefault();
-        $("#successMessage").fadeIn().delay(3000).fadeOut();
-        this.reset();
+    
+        $.post("submit_contact.php", $(this).serialize(), function (data) {
+            if (data.trim() === "success") {
+                $("#successMessage").fadeIn().delay(3000).fadeOut();
+                $("#contactForm")[0].reset();
+            } else if (data.trim() === "unauthorized") {
+                alert("You must be logged in to send a message.");
+            } else {
+                alert("There was an issue submitting the form.");
+                console.error("Server response:", data);
+            }
+        });
     });
-});
+    
 
-//jQuery for smooth scroll effect
-$(document).ready(function () {
+    // Smooth scroll
     $("a").on("click", function (event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -122,29 +151,21 @@ $(document).ready(function () {
             }, 800);
         }
     });
-});
 
+    // Menu search
+    $("#searchBox").remove();
+    $(".menu-items").before('<input type="text" id="searchBox" placeholder="Search menu..." style="margin: 20px auto; display: block; padding: 8px; width: 80%; border: 1px solid #ccc; border-radius: 5px;">');
 
-    // jQuery for menu search 
-    $(document).ready(function () {
-        // Remove existing search box if it exists
-        $("#searchBox").remove();
-      
-        // Append search bar before the menu list
-        $(".menu-items").before('<input type="text" id="searchBox" placeholder="Search menu..." style="margin: 20px auto; display: block; padding: 8px; width: 80%; border: 1px solid #ccc; border-radius: 5px;">');
-    
-        // Search function
-        $("#searchBox").on("keyup", function () {
-            let query = $(this).val().toLowerCase();
-            
-            $(".menu-item").each(function () {
-                $(this).toggle($(this).text().toLowerCase().includes(query));
-            });
+    $("#searchBox").on("keyup", function () {
+        let query = $(this).val().toLowerCase();
+        $(".menu-item").each(function () {
+            $(this).toggle($(this).text().toLowerCase().includes(query));
         });
     });
-    
-    let slideIndex = 0;
+});
 
+// Optional: slideshow handler
+let slideIndex = 0;
 function showSlides() {
     let slides = document.querySelectorAll(".slide");
     slides.forEach(slide => slide.style.display = "none");
@@ -153,7 +174,6 @@ function showSlides() {
     if (slideIndex > slides.length) slideIndex = 1;
 
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    setTimeout(showSlides, 3000);
 }
-
 document.addEventListener("DOMContentLoaded", showSlides);
