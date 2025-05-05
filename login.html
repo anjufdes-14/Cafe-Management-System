@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Aura Delights Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('bcafe3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .overlay {
+      background-color: rgba(255, 250, 240, 0.9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      color: #c85000;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .auth-buttons {
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .auth-link {
+      background-color: #ff9248;
+      color: white;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      font-size: 16px;
+    }
+
+    .auth-link:hover {
+      background-color: #ff6a00;
+      transform: scale(1.05);
+    }
+
+    form {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    form h2 {
+      color: #5a3e36;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: #fdfdfd;
+    }
+
+    .input-group i {
+      color: #c85000;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+      background: transparent;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c85000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #a64100;
+    }
+
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>AURA DELIGHTS CAFE</h1>
+
+    <div class="auth-buttons">
+      <a href="signup.html" class="auth-link">Sign Up</a>
+    </div>
+
+    <form action="login.php" method="POST">
+      <h2>Login</h2>
+      
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" placeholder="Username" required />
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required />
+      </div>
+
+      <button type="submit">Login</button>
+
+    </form>
+  </div>
+</body>
+</html>
